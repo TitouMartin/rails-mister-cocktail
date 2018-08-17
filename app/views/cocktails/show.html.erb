@@ -1,9 +1,16 @@
-<h1><%= @cocktail.name %></h1>
+<h1 class = "cocktail-name"><%= @cocktail.name %></h1>
 
-<% @cocktail.doses.each do |dose| %>
-  <p class = 'ingredient-name'><%= dose.ingredient.name %> : <%= dose.description %></p>
-  <%= link_to 'delete', dose_path(dose), class: "delete-corner", method: :delete, data: {confirm: "sure?"}  %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="cocktail-description">
+        <p class="ingredient-name"><%= dose.ingredient.name %> : </p>
+        <p class= "dose-description"><%= dose.description %></p>
+        <%= link_to 'delete', dose_path(dose), class: "delete-corner", method: :delete, data: {confirm: "sure?"} %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= simple_form_for([@cocktail, @dose ]) do |f| %>
     <%= f.association :ingredient %>

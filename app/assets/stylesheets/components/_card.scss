@@ -1,0 +1,21 @@
+.card {
+  margin: 30px;
+  background-color: #fcf3e0;
+  box-shadow: 3px;
+}
+
+
+.cocktail-name {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
+  color: #00acce;
+  a:hover {
+    color: 0083e8;
+  }
+}
+
+
+.dose-content {
+  display: flex;
+  align-items: center;
+}

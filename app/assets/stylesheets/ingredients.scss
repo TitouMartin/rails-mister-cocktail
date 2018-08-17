@@ -1,3 +1,18 @@
 // Place all the styles related to the ingredients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cocktail-description {
+  display: flex;
+  align-items: center;
+  align-content: justify;
+}
+
+.ingredient-name {
+  margin-right: 5px;
+  color: #5e5e5e;
+}
+
+.dose-description {
+  color: #5e5e5e;
+}
+
