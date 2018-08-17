@@ -1,2 +1,14 @@
-<h1>Coktails#show</h1>
-<p>Find me in app/views/coktails/show.html.erb</p>
+<h1><%= @cocktail.name %></h1>
+
+<% @cocktail.doses.each do |dose| %>
+  <p class = 'ingredient-name'><%= dose.ingredient.name %> : <%= dose.description %></p>
+  <%= link_to 'delete', dose_path(dose), class: "delete-corner", method: :delete, data: {confirm: "sure?"}  %>
+<% end %>
+
+<%= simple_form_for([@cocktail, @dose ]) do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.text_field :description  %>
+    <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to index', root_path  %>

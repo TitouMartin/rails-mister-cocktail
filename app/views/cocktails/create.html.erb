@@ -1,2 +1,8 @@
 <h1>Coktails#create</h1>
 <p>Find me in app/views/coktails/create.html.erb</p>
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.imput :name %>
+  <%= f.button :submit %>
+<% end %>
+
