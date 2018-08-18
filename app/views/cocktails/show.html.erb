@@ -1,21 +1,31 @@
-<h1 class = "cocktail-name"><%= @cocktail.name %></h1>
+<div class="show-banner" style= "background-image: linear-gradient(119.94499274700479deg, rgba(255, 255, 255,0.3) 26.791015625%,rgba(128, 128, 128,0.3) 52.79557291666667%,rgba(0, 0, 0,0.3) 79.681640625%,rgba(0, 0, 0, 0.3) 79.681640625%), url('https://images.unsplash.com/photo-1529671434436-8fbb37410056?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=76100015e7b5bff2db30338af9ebd084&auto=format&fit=crop&w=1050&q=80');">
+  <div class="banner-content">
+    <h1 class = "cocktail-name"><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+
+
 
 <div class="container">
   <div class="row">
     <% @cocktail.doses.each do |dose| %>
-      <div class="cocktail-description">
+      <div class="ingredients-cards col-xs-12 col-sm-6 col-lg-3">
         <p class="ingredient-name"><%= dose.ingredient.name %> : </p>
         <p class= "dose-description"><%= dose.description %></p>
-        <%= link_to 'delete', dose_path(dose), class: "delete-corner", method: :delete, data: {confirm: "sure?"} %>
+        <%= link_to 'x', dose_path(dose), class: "delete-corner", method: :delete, data: {confirm: "sure?"}  %>
       </div>
     <% end %>
   </div>
-</div>
-
-<%= simple_form_for([@cocktail, @dose ]) do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.text_field :description  %>
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="form col-xs-12 col-sm-6 col-ls-3">
+      <%= simple_form_for([@cocktail, @dose ]) do |f| %>
+      <%= f.association :ingredient %>
+      <%= f.text_field :description  %>
+      <%= f.button :submit %>
 <% end %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Back to index', root_path  %>

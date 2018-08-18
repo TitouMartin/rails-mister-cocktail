@@ -1,0 +1,21 @@
+.ingredients-cards {
+  display: flex;
+  align-items: center;
+  align-content: justify;
+}
+
+.ingredient-name {
+  margin-right: 5px;
+  color: #5e5e5e;
+  margin-right: 5px;
+}
+
+.dose-description {
+  color: #5e5e5e;
+}
+
+.delete-corner {
+  color: #c7cbcc;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
